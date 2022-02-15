@@ -16,17 +16,21 @@ function App() {
     dispatch(getTaskList());
   }, []);
 
-  const handleSubmit = (e) => {
-    console.log(e);
-    e.preventDefault();
-    // dispatch(AddTodoAction(todo));
+  const clearInput = () => {
+    setData({
+      id: "",
+      title: "",
+      description: "",
+      status: "",
+      createdAt: "",
+    });
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <h2>Todo List App</h2>
-        <FormComponent data={data} setData={setData} button={true} />
+        <FormComponent data={data} setData={setData} button={true} clearInput={clearInput} />
 
         <div className="mt-5">
           <TabsComponent

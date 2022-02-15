@@ -9,6 +9,7 @@ export default function FormComponent(props) {
     await dispatch(AddTodoAction(value));
     props.setData("");
     console.log("data", props);
+    props.clearInput()
   };
 
   return (
@@ -69,15 +70,6 @@ export default function FormComponent(props) {
         <Button
           onClick={() => {
             createTask(props.data);
-            props.setData({
-              data: {
-                id: "",
-                title: "",
-                description: "",
-                status: undefined,
-                createdAt: "",
-              },
-            });
           }}
           color="secondary"
         >
