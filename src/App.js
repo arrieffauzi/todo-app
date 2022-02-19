@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Container } from "reactstrap";
 import { getTaskList } from "./actions/toDoAction";
 import "./App.css";
 import FormComponent from "./components/FormComponent";
@@ -28,17 +29,23 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>Todo List App</h2>
-        <FormComponent data={data} setData={setData} button={true} clearInput={clearInput} />
-
-        <div className="mt-5">
+      <div className="App-header mb-5">
+        <div style={{ textAlign: "center" }}>
+          <h2>Todo List App</h2>
+        </div>
+        <FormComponent
+          data={data}
+          setData={setData}
+          button={true}
+          clearInput={clearInput}
+        />
+      </div>
+      <div className="todos-container">
           <TabsComponent
             complete={<TaskComponent todos={todos} status={1} />}
             incomplete={<TaskComponent todos={todos} status={0} />}
           />
-        </div>
-      </header>
+      </div>
     </div>
   );
 }

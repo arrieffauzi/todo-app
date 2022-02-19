@@ -1,15 +1,27 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  background-color: #282c34;
+  /* background-color: grey; */
 }
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* justify-content: center; */
+  width: 600px;
+  margin: auto;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.todos-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .allTodos {
@@ -25,7 +37,7 @@
   padding: 10px 20px;
   display: flex;
   width: 950px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .todoText {
